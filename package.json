@@ -1,0 +1,17 @@
+{
+  "name": "react-learning",
+  "version": "1.0.0",
+  "description": "this is a namaste react ",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "dhiraj udhani",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.11.0"
+  }
+}
