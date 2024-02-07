@@ -3015,7 +3015,7 @@ $RefreshReg$(_c, "AppLayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Header":"kj0Tf","../src/Images/logo.jpg":"kx4rM","./components/Body":"grBIR","./components/RestaurantCard":"iYM5P"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Header":"kj0Tf","./components/Body":"grBIR","./components/RestaurantCard":"iYM5P","../src/Images/logo.jpg":"kx4rM"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27462,7 +27462,7 @@ $RefreshReg$(_c, "Header");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../Images/logo.jpg":"kx4rM"}],"kx4rM":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../Images/logo.jpg":"kx4rM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kx4rM":[function(require,module,exports) {
 module.exports = require("3b38129cea9dfa4f").getBundleURL("jJkG6") + "logo.b6f5dc61.jpg" + "?" + Date.now();
 
 },{"3b38129cea9dfa4f":"lgJ39"}],"lgJ39":[function(require,module,exports) {
@@ -27512,45 +27512,76 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _restaurantCard = require("./RestaurantCard");
 var _restaurantCardDefault = parcelHelpers.interopDefault(_restaurantCard);
+var _react = require("react");
 var _mockData = require("../utils/mockData");
 var _mockDataDefault = parcelHelpers.interopDefault(_mockData);
-const Body = ()=>{
+var _s = $RefreshSig$();
+/* React Hooks --> (Normal Js Function)
+    Mainly of 2 types
+        -> useState() -- super powerful state  variable in react
+        -> useEffect()
+*/ const Body = ()=>{
+    _s();
+    // Local State Variable - Super powerful variable
+    // const arr = useState(restaurantList);
+    // const [listOfRestaurant , setListOfRestaurant] = arr;
+    // -------------------------OR------------------------------------------
+    const [listOfRestaurant, setListOfRestaurant] = (0, _react.useState)((0, _mockDataDefault.default));
+    // Normal variable
+    // let listOfRestaurant;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "search",
-                children: "Search"
+                className: "filter",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    className: "filter-btn",
+                    onClick: ()=>{
+                        // Filter out logic
+                        const fillteredRes = listOfRestaurant.filter((res)=>{
+                            return res.data.avgRating > 4;
+                        });
+                        console.log(fillteredRes);
+                        setListOfRestaurant(fillteredRes);
+                    },
+                    children: "Top Rated"
+                }, void 0, false, {
+                    fileName: "05_Lets_get_hooked/Coding/src/components/Body.js",
+                    lineNumber: 27,
+                    columnNumber: 9
+                }, undefined)
             }, void 0, false, {
                 fileName: "05_Lets_get_hooked/Coding/src/components/Body.js",
-                lineNumber: 7,
-                columnNumber: 13
+                lineNumber: 26,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "res-container",
-                children: (0, _mockDataDefault.default).map((restaurant)=>{
+                children: listOfRestaurant.map((restaurant)=>{
                     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
                         resData: restaurant
                     }, restaurant.data.id, false, {
                         fileName: "05_Lets_get_hooked/Coding/src/components/Body.js",
-                        lineNumber: 31,
-                        columnNumber: 32
+                        lineNumber: 46,
+                        columnNumber: 13
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "05_Lets_get_hooked/Coding/src/components/Body.js",
-                lineNumber: 8,
-                columnNumber: 13
+                lineNumber: 41,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "05_Lets_get_hooked/Coding/src/components/Body.js",
-        lineNumber: 6,
-        columnNumber: 9
+        lineNumber: 25,
+        columnNumber: 5
     }, undefined);
 };
+_s(Body, "y5lrYvvkBbQiIbophx2luU1DBZk=");
 _c = Body;
-exports.default = Body;
+exports.default = Body; // NOTE bts of state variable
+ // Whenever state variable updates React will rerender the Component
 var _c;
 $RefreshReg$(_c, "Body");
 
@@ -27559,7 +27590,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./RestaurantCard":"iYM5P","../utils/mockData":"a6wZP"}],"iYM5P":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./RestaurantCard":"iYM5P","../utils/mockData":"a6wZP","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"iYM5P":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2030 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27573,7 +27604,7 @@ var _constant = require("../utils/constant");
 var _constantDefault = parcelHelpers.interopDefault(_constant);
 const RestaurantCard = (props)=>{
     // const {resName, cuisine} = props;
-    console.log(props);
+    // console.log(props)
     const { resData } = props;
     const { cloudinaryImageId, name, cuisines, avgRating, costForTwo } = resData?.data;
     const styleCard = {
@@ -27644,7 +27675,7 @@ $RefreshReg$(_c, "RestaurantCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/constant":"3658P"}],"3658P":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../utils/constant":"3658P","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3658P":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/";
@@ -27655,7 +27686,7 @@ exports.default = CDN_URL; // There are 2 types export
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"a6wZP":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-const restaurantList = [
+let restaurantList = [
     {
         type: "restaurant",
         data: {

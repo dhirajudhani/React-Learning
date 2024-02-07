@@ -1,39 +1,58 @@
 import RestaurantCard from "./RestaurantCard";
+import { useState } from "react";
 import restaurantList from "../utils/mockData";
 
+/* React Hooks --> (Normal Js Function)
+    Mainly of 2 types
+        -> useState() -- super powerful state  variable in react
+        -> useEffect()
+*/
+
+
 const Body = () => {
-    return (
-        <div className="body">
-            <div className="search">Search</div>
-            <div className="res-container">
-                {/* <RestaurantCard resName="Jalaram" cuisine="North Indian, Thali"/> */}
 
-                {/* <RestaurantCard resData = {restaurantList[0]}/>
-                <RestaurantCard resData = {restaurantList[1]}/>
-                <RestaurantCard resData = {restaurantList[2]}/>
-                <RestaurantCard resData = {restaurantList[3]}/>
-                <RestaurantCard resData = {restaurantList[4]}/>
-                <RestaurantCard resData = {restaurantList[5]}/>
-                <RestaurantCard resData = {restaurantList[6]}/>
-                <RestaurantCard resData = {restaurantList[7]}/>
-                <RestaurantCard resData = {restaurantList[8]}/>
-                <RestaurantCard resData = {restaurantList[9]}/>
-                <RestaurantCard resData = {restaurantList[10]}/>
-                <RestaurantCard resData = {restaurantList[11]}/>
-                <RestaurantCard resData = {restaurantList[12]}/>
-                <RestaurantCard resData = {restaurantList[13]}/>
-                <RestaurantCard resData = {restaurantList[14]}/>
-                
-                 */}
+    // Local State Variable - Super powerful variable
+    // const arr = useState(restaurantList);
+    // const [listOfRestaurant , setListOfRestaurant] = arr;
 
-                 {
-                    restaurantList.map( (restaurant) => {
-                        return <RestaurantCard key = {restaurant.data.id} resData = {restaurant} />
-                    })
-                 }
-            </div>
-        </div>
-    )
-}
+    // -------------------------OR------------------------------------------
+
+    const [listOfRestaurant , setListOfRestaurant] = useState(restaurantList);
+
+    // Normal variable
+    // let listOfRestaurant;
+  return (
+    <div className="body">
+      <div className="filter">
+        <button
+          className="filter-btn"
+          onClick={() => {  
+            // Filter out logic
+            const fillteredRes = listOfRestaurant.filter((res) => {
+                return (res.data.avgRating > 4);
+            })
+            console.log(fillteredRes)
+            setListOfRestaurant(fillteredRes);
+          }}
+        >
+          Top Rated
+        </button>
+      </div>
+      <div className="res-container">
+        {/* <RestaurantCard resName="Jalaram" cuisine="North Indian, Thali"/> */}
+
+        {listOfRestaurant.map((restaurant) => {
+          return (
+            <RestaurantCard key={restaurant.data.id} resData={restaurant} />
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
 export default Body;
+
+
+// NOTE bts of state variable
+// Whenever state variable updates React will rerender the Component
