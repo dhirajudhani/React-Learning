@@ -2966,40 +2966,27 @@ var _contact = require("./components/Contact");
 var _contactDefault = parcelHelpers.interopDefault(_contact);
 var _error = require("./components/Error");
 var _errorDefault = parcelHelpers.interopDefault(_error);
+var _restaurantMenu = require("./components/RestaurantMenu");
+var _restaurantMenuDefault = parcelHelpers.interopDefault(_restaurantMenu);
 var _reactRouterDom = require("react-router-dom");
-/*
-Header
-    - Logo
-    - Nav Items
-Body
-    - Search
-    - ReataurantContainer
-    - ReataurantCard
-        - Image
-        - Name of res, Star rating, cuisine, deleviry time
-Footer
-    - Copyright
-    - Links
-    - Contact info
-    - Address
-*/ const AppLayout = ()=>{
+const AppLayout = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "app",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "07_Finding_the_path/Coding/src/App.js",
-                lineNumber: 37,
+                lineNumber: 18,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                 fileName: "07_Finding_the_path/Coding/src/App.js",
-                lineNumber: 38,
+                lineNumber: 19,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "07_Finding_the_path/Coding/src/App.js",
-        lineNumber: 36,
+        lineNumber: 17,
         columnNumber: 6
     }, undefined);
 };
@@ -3009,7 +2996,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
             fileName: "07_Finding_the_path/Coding/src/App.js",
-            lineNumber: 46,
+            lineNumber: 27,
             columnNumber: 18
         }, undefined),
         children: [
@@ -3017,7 +3004,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "07_Finding_the_path/Coding/src/App.js",
-                    lineNumber: 50,
+                    lineNumber: 31,
                     columnNumber: 26
                 }, undefined)
             },
@@ -3025,7 +3012,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/about",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
                     fileName: "07_Finding_the_path/Coding/src/App.js",
-                    lineNumber: 54,
+                    lineNumber: 35,
                     columnNumber: 26
                 }, undefined)
             },
@@ -3033,14 +3020,22 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/contact",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
                     fileName: "07_Finding_the_path/Coding/src/App.js",
-                    lineNumber: 58,
+                    lineNumber: 39,
+                    columnNumber: 26
+                }, undefined)
+            },
+            {
+                path: "/restaurants/:resId",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantMenuDefault.default), {}, void 0, false, {
+                    fileName: "07_Finding_the_path/Coding/src/App.js",
+                    lineNumber: 43,
                     columnNumber: 26
                 }, undefined)
             }
         ],
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "07_Finding_the_path/Coding/src/App.js",
-            lineNumber: 61,
+            lineNumber: 46,
             columnNumber: 23
         }, undefined)
     }
@@ -3050,7 +3045,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     router: appRouter
 }, void 0, false, {
     fileName: "07_Finding_the_path/Coding/src/App.js",
-    lineNumber: 66,
+    lineNumber: 51,
     columnNumber: 13
 }, undefined)) // Passing a props to a component is like passing an argument to function
  // props destructuring => const {resName, cuisine} = props;
@@ -3065,7 +3060,7 @@ $RefreshReg$(_c, "AppLayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","../src/Images/logo.jpg":"8oTJ6","./components/Header":"bYjg0","./components/Body":"9D8AX","./components/RestaurantCard":"lRKAL","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/About":"6Byk8","react-router-dom":"9xmpe","./components/Contact":"2CXUT","./components/Error":"dM2WH"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","../src/Images/logo.jpg":"8oTJ6","./components/Header":"bYjg0","./components/Body":"9D8AX","./components/RestaurantCard":"lRKAL","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/About":"6Byk8","./components/Contact":"2CXUT","./components/Error":"dM2WH","./components/RestaurantMenu":"fE1pj","react-router-dom":"9xmpe"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27303,7 +27298,6 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _logoJpg = require("../Images/logo.jpg");
 var _logoJpgDefault = parcelHelpers.interopDefault(_logoJpg);
 var _react = require("react");
-var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 const Header = ()=>{
     _s();
@@ -27320,12 +27314,12 @@ const Header = ()=>{
                     alt: "Logo"
                 }, void 0, false, {
                     fileName: "07_Finding_the_path/Coding/src/components/Header.js",
-                    lineNumber: 12,
+                    lineNumber: 9,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "07_Finding_the_path/Coding/src/components/Header.js",
-                lineNumber: 11,
+                lineNumber: 8,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27333,59 +27327,31 @@ const Header = ()=>{
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                to: "/",
-                                children: "Home"
-                            }, void 0, false, {
-                                fileName: "07_Finding_the_path/Coding/src/components/Header.js",
-                                lineNumber: 17,
-                                columnNumber: 13
-                            }, undefined)
+                            children: "Home"
                         }, void 0, false, {
                             fileName: "07_Finding_the_path/Coding/src/components/Header.js",
-                            lineNumber: 16,
+                            lineNumber: 13,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                to: "/about",
-                                children: "About Us"
-                            }, void 0, false, {
-                                fileName: "07_Finding_the_path/Coding/src/components/Header.js",
-                                lineNumber: 20,
-                                columnNumber: 13
-                            }, undefined)
+                            children: "About Us"
                         }, void 0, false, {
                             fileName: "07_Finding_the_path/Coding/src/components/Header.js",
-                            lineNumber: 19,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                to: "/contact",
-                                children: "Contact Us"
-                            }, void 0, false, {
-                                fileName: "07_Finding_the_path/Coding/src/components/Header.js",
-                                lineNumber: 23,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "07_Finding_the_path/Coding/src/components/Header.js",
-                            lineNumber: 22,
+                            lineNumber: 14,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: "Help"
                         }, void 0, false, {
                             fileName: "07_Finding_the_path/Coding/src/components/Header.js",
-                            lineNumber: 25,
+                            lineNumber: 15,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: "Cart"
                         }, void 0, false, {
                             fileName: "07_Finding_the_path/Coding/src/components/Header.js",
-                            lineNumber: 26,
+                            lineNumber: 16,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27398,24 +27364,24 @@ const Header = ()=>{
                             children: btnNameReact
                         }, void 0, false, {
                             fileName: "07_Finding_the_path/Coding/src/components/Header.js",
-                            lineNumber: 27,
+                            lineNumber: 17,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "07_Finding_the_path/Coding/src/components/Header.js",
-                    lineNumber: 15,
+                    lineNumber: 12,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "07_Finding_the_path/Coding/src/components/Header.js",
-                lineNumber: 14,
+                lineNumber: 11,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "07_Finding_the_path/Coding/src/components/Header.js",
-        lineNumber: 10,
+        lineNumber: 7,
         columnNumber: 5
     }, undefined);
 };
@@ -27430,7 +27396,7 @@ $RefreshReg$(_c, "Header");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../Images/logo.jpg":"8oTJ6","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"gkKU3":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../Images/logo.jpg":"8oTJ6","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -27598,7 +27564,546 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"7422ead32dcc1e6b":"786KC"}],"9xmpe":[function(require,module,exports) {
+},{"7422ead32dcc1e6b":"786KC"}],"9D8AX":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$a8ea = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$a8ea.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _restaurantCard = require("./RestaurantCard");
+var _restaurantCardDefault = parcelHelpers.interopDefault(_restaurantCard);
+var _shimmer = require("./Shimmer");
+var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
+var _s = $RefreshSig$();
+// import restaurantList from "../utils/mockData";
+/* React Hooks --> (Normal Js Function)
+    Mainly of 2 types
+        -> useState() -- super powerful state  variable in react
+        -> useEffect()
+*/ // useEffect( () => {} , []) it takes 2 arguments 1-> callback function and 2-> dependencies array
+const Body = ()=>{
+    _s();
+    // Local State Variable - Super powerful variable
+    // const arr = useState(restaurantList);
+    // const [listOfRestaurant , setListOfRestaurant] = arr;
+    // -------------------------OR------------------------------------------
+    const [listOfRestaurant, setListOfRestaurant] = (0, _react.useState)([]);
+    const [searchedRestaurants, setSearchRestaurants] = (0, _react.useState)([]);
+    const [searchText, setSearchText] = (0, _react.useState)("");
+    //whenever state variable updates, react triggers a reconciliation cycle(re-rendering the component)
+    console.log("Body Rendered");
+    // Normal variable
+    // let listOfRestaurant;
+    (0, _react.useEffect)(()=>{
+        fetchData();
+    }, []);
+    const fetchData = async ()=>{
+        try {
+            const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.0343135&lng=72.52661049999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+            const json = await data.json();
+            setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+            setSearchRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    // Conditional Rendering
+    // if(listOfRestaurant.length === 0){
+    //   return <Shimmer/>
+    // }
+    return listOfRestaurant.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
+        fileName: "07_Finding_the_path/Coding/src/components/Body.js",
+        lineNumber: 59,
+        columnNumber: 5
+    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "body",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "filter",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "search",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                type: "text",
+                                className: "search-box",
+                                placeholder: "Search for restaurants and food",
+                                value: searchText,
+                                onChange: (e)=>{
+                                    setSearchText(e.target.value);
+                                }
+                            }, void 0, false, {
+                                fileName: "07_Finding_the_path/Coding/src/components/Body.js",
+                                lineNumber: 64,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                onClick: ()=>{
+                                    console.log(searchText);
+                                    const fillteredRestaurants = listOfRestaurant.filter((res)=>{
+                                        return res.info.name.toLowerCase().includes(searchText.toLocaleLowerCase());
+                                    });
+                                    setSearchRestaurants(fillteredRestaurants);
+                                },
+                                children: "Search"
+                            }, void 0, false, {
+                                fileName: "07_Finding_the_path/Coding/src/components/Body.js",
+                                lineNumber: 73,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "07_Finding_the_path/Coding/src/components/Body.js",
+                        lineNumber: 63,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "filter-btn",
+                        onClick: ()=>{
+                            // Filter out logic
+                            const fillteredRes = listOfRestaurant.filter((res)=>{
+                                return res.info.avgRating > 4;
+                            });
+                            console.log(fillteredRes);
+                            setListOfRestaurant(fillteredRes);
+                        },
+                        children: "Top Rated"
+                    }, void 0, false, {
+                        fileName: "07_Finding_the_path/Coding/src/components/Body.js",
+                        lineNumber: 85,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "07_Finding_the_path/Coding/src/components/Body.js",
+                lineNumber: 62,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "res-container",
+                children: searchedRestaurants?.map((restaurant)=>{
+                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
+                        item: restaurant.info
+                    }, void 0, false, {
+                        fileName: "07_Finding_the_path/Coding/src/components/Body.js",
+                        lineNumber: 101,
+                        columnNumber: 18
+                    }, undefined);
+                })
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/Body.js",
+                lineNumber: 99,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "07_Finding_the_path/Coding/src/components/Body.js",
+        lineNumber: 61,
+        columnNumber: 5
+    }, undefined);
+};
+_s(Body, "S6w/XLck+ayf24b6QoHjuVd9aP4=");
+_c = Body;
+exports.default = Body; // NOTE bts of state variable
+ // Whenever state variable updates React will rerender the Component
+ // NOTE (How useEffect will work)
+ /*
+  Basically first whole component will render , when rendercycle is finished then callback function written in useEffect is called
+
+  Basically whatever we have to do after rendering a page for that we have to write it in useEffect
+
+  Note :-
+      if no dependency array => useEffect is called on every render
+      if dependency array is empty [] => useEffect is called on initial render (just once)
+      if dependency array is [btnReact] => called everytime btnReact is updated
+*/ 
+var _c;
+$RefreshReg$(_c, "Body");
+
+  $parcel$ReactRefreshHelpers$a8ea.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./RestaurantCard":"lRKAL","./Shimmer":"fOwuG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lRKAL":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$ea4d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$ea4d.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _constant = require("../utils/constant");
+var _constantDefault = parcelHelpers.interopDefault(_constant);
+const RestaurantCard = (props)=>{
+    // const {resName, cuisine} = props;
+    // console.log(props)
+    const { item } = props;
+    const { name, avgRating, cuisines, costForTwo, cloudinaryImageId } = item || {};
+    const imgsrc = `${(0, _constantDefault.default)}/${cloudinaryImageId}`;
+    const styleCard = {
+        backgroundColor: "#f0f0f0"
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "res-card",
+        style: styleCard,
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                src: imgsrc,
+                alt: "res-logo",
+                className: "res-logo"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/RestaurantCard.js",
+                lineNumber: 16,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: name
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/RestaurantCard.js",
+                lineNumber: 17,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: cuisines && cuisines.join(", ")
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/RestaurantCard.js",
+                lineNumber: 18,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: [
+                    avgRating,
+                    " stars"
+                ]
+            }, void 0, true, {
+                fileName: "07_Finding_the_path/Coding/src/components/RestaurantCard.js",
+                lineNumber: 19,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: costForTwo
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/RestaurantCard.js",
+                lineNumber: 20,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "07_Finding_the_path/Coding/src/components/RestaurantCard.js",
+        lineNumber: 15,
+        columnNumber: 9
+    }, undefined);
+};
+_c = RestaurantCard;
+exports.default = RestaurantCard;
+var _c;
+$RefreshReg$(_c, "RestaurantCard");
+
+  $parcel$ReactRefreshHelpers$ea4d.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","../utils/constant":"ijeBb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ijeBb":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660";
+exports.default = CDN_URL; // There are 2 types export 
+ // 1) -> Default export =>  (syntax)export default CDN_URL;
+ // 2) -> Named export => (syntax) export CDN_URL = "link";
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fOwuG":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$b32d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$b32d.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Shimmer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "shimmer-container",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
+                lineNumber: 4,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
+                lineNumber: 5,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
+                lineNumber: 6,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
+                lineNumber: 7,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
+                lineNumber: 8,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
+                lineNumber: 9,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
+                lineNumber: 10,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
+                lineNumber: 11,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
+                lineNumber: 12,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
+                lineNumber: 13,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
+                lineNumber: 14,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
+                lineNumber: 15,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
+                lineNumber: 16,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
+                lineNumber: 17,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
+                lineNumber: 18,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
+                lineNumber: 19,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
+        lineNumber: 3,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Shimmer;
+exports.default = Shimmer;
+var _c;
+$RefreshReg$(_c, "Shimmer");
+
+  $parcel$ReactRefreshHelpers$b32d.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6Byk8":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$b8eb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$b8eb.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const About = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "About"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/About.js",
+                lineNumber: 4,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: "This is a namaste web series"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/About.js",
+                lineNumber: 5,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "07_Finding_the_path/Coding/src/components/About.js",
+        lineNumber: 3,
+        columnNumber: 9
+    }, undefined);
+};
+_c = About;
+exports.default = About;
+var _c;
+$RefreshReg$(_c, "About");
+
+  $parcel$ReactRefreshHelpers$b8eb.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2CXUT":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$3c17 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$3c17.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const Contact = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: "Contact"
+    }, void 0, false, {
+        fileName: "07_Finding_the_path/Coding/src/components/Contact.js",
+        lineNumber: 5,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Contact;
+exports.default = Contact;
+var _c;
+$RefreshReg$(_c, "Contact");
+
+  $parcel$ReactRefreshHelpers$3c17.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dM2WH":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$c5f6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$c5f6.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
+const Error = ()=>{
+    _s();
+    const err = (0, _reactRouterDom.useRouteError)();
+    console.log(err);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "OOPSS!!!"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/Error.js",
+                lineNumber: 8,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: "Something went wrong"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/Error.js",
+                lineNumber: 11,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: [
+                    err.status,
+                    " : ",
+                    err.statusText
+                ]
+            }, void 0, true, {
+                fileName: "07_Finding_the_path/Coding/src/components/Error.js",
+                lineNumber: 12,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "07_Finding_the_path/Coding/src/components/Error.js",
+        lineNumber: 7,
+        columnNumber: 9
+    }, undefined);
+};
+_s(Error, "U5GmGaAmh0j0MVy+E8WdBnjlm7s=", false, function() {
+    return [
+        (0, _reactRouterDom.useRouteError)
+    ];
+});
+_c = Error;
+exports.default = Error;
+var _c;
+$RefreshReg$(_c, "Error");
+
+  $parcel$ReactRefreshHelpers$c5f6.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9xmpe":[function(require,module,exports) {
 /**
  * React Router DOM v6.22.1
  *
@@ -34108,454 +34613,11 @@ function persistAppliedTransitions(_window, transitions) {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9D8AX":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$a8ea = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fE1pj":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$4052 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$a8ea.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _restaurantCard = require("./RestaurantCard");
-var _restaurantCardDefault = parcelHelpers.interopDefault(_restaurantCard);
-var _shimmer = require("./Shimmer");
-var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
-var _s = $RefreshSig$();
-// import restaurantList from "../utils/mockData";
-/* React Hooks --> (Normal Js Function)
-    Mainly of 2 types
-        -> useState() -- super powerful state  variable in react
-        -> useEffect()
-*/ // useEffect( () => {} , []) it takes 2 arguments 1-> callback function and 2-> dependencies array
-const Body = ()=>{
-    _s();
-    // Local State Variable - Super powerful variable
-    // const arr = useState(restaurantList);
-    // const [listOfRestaurant , setListOfRestaurant] = arr;
-    // -------------------------OR------------------------------------------
-    const [listOfRestaurant, setListOfRestaurant] = (0, _react.useState)([]);
-    const [searchedRestaurants, setSearchRestaurants] = (0, _react.useState)([]);
-    const [searchText, setSearchText] = (0, _react.useState)("");
-    //whenever state variable updates, react triggers a reconciliation cycle(re-rendering the component)
-    console.log("Body Rendered");
-    // Normal variable
-    // let listOfRestaurant;
-    (0, _react.useEffect)(()=>{
-        fetchData();
-    }, []);
-    const fetchData = async ()=>{
-        try {
-            const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.0343135&lng=72.52661049999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-            const json = await data.json();
-            setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-            setSearchRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        } catch (error) {
-            console.log(error);
-        }
-    };
-    // Conditional Rendering
-    // if(listOfRestaurant.length === 0){
-    //   return <Shimmer/>
-    // }
-    return listOfRestaurant.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
-        fileName: "07_Finding_the_path/Coding/src/components/Body.js",
-        lineNumber: 59,
-        columnNumber: 5
-    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "body",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "filter",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "search",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "text",
-                                className: "search-box",
-                                placeholder: "Search for restaurants and food",
-                                value: searchText,
-                                onChange: (e)=>{
-                                    setSearchText(e.target.value);
-                                }
-                            }, void 0, false, {
-                                fileName: "07_Finding_the_path/Coding/src/components/Body.js",
-                                lineNumber: 64,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                onClick: ()=>{
-                                    console.log(searchText);
-                                    const fillteredRestaurants = listOfRestaurant.filter((res)=>{
-                                        return res.info.name.toLowerCase().includes(searchText.toLocaleLowerCase());
-                                    });
-                                    setSearchRestaurants(fillteredRestaurants);
-                                },
-                                children: "Search"
-                            }, void 0, false, {
-                                fileName: "07_Finding_the_path/Coding/src/components/Body.js",
-                                lineNumber: 73,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "07_Finding_the_path/Coding/src/components/Body.js",
-                        lineNumber: 63,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "filter-btn",
-                        onClick: ()=>{
-                            // Filter out logic
-                            const fillteredRes = listOfRestaurant.filter((res)=>{
-                                return res.info.avgRating > 4;
-                            });
-                            console.log(fillteredRes);
-                            setListOfRestaurant(fillteredRes);
-                        },
-                        children: "Top Rated"
-                    }, void 0, false, {
-                        fileName: "07_Finding_the_path/Coding/src/components/Body.js",
-                        lineNumber: 85,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "07_Finding_the_path/Coding/src/components/Body.js",
-                lineNumber: 62,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "res-container",
-                children: searchedRestaurants?.map((restaurant)=>{
-                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
-                        item: restaurant.info
-                    }, void 0, false, {
-                        fileName: "07_Finding_the_path/Coding/src/components/Body.js",
-                        lineNumber: 101,
-                        columnNumber: 18
-                    }, undefined);
-                })
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/Body.js",
-                lineNumber: 99,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "07_Finding_the_path/Coding/src/components/Body.js",
-        lineNumber: 61,
-        columnNumber: 5
-    }, undefined);
-};
-_s(Body, "S6w/XLck+ayf24b6QoHjuVd9aP4=");
-_c = Body;
-exports.default = Body; // NOTE bts of state variable
- // Whenever state variable updates React will rerender the Component
- // NOTE (How useEffect will work)
- /*
-  Basically first whole component will render , when rendercycle is finished then callback function written in useEffect is called
-
-  Basically whatever we have to do after rendering a page for that we have to write it in useEffect
-
-  Note :-
-      if no dependency array => useEffect is called on every render
-      if dependency array is empty [] => useEffect is called on initial render (just once)
-      if dependency array is [btnReact] => called everytime btnReact is updated
-*/ 
-var _c;
-$RefreshReg$(_c, "Body");
-
-  $parcel$ReactRefreshHelpers$a8ea.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./RestaurantCard":"lRKAL","./Shimmer":"fOwuG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lRKAL":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$ea4d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$ea4d.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _constant = require("../utils/constant");
-var _constantDefault = parcelHelpers.interopDefault(_constant);
-const RestaurantCard = (props)=>{
-    // const {resName, cuisine} = props;
-    // console.log(props)
-    const { item } = props;
-    const { name, avgRating, cuisines, costForTwo, cloudinaryImageId } = item || {};
-    const imgsrc = `${(0, _constantDefault.default)}/${cloudinaryImageId}`;
-    const styleCard = {
-        backgroundColor: "#f0f0f0"
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "res-card",
-        style: styleCard,
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                src: imgsrc,
-                alt: "res-logo",
-                className: "res-logo"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/RestaurantCard.js",
-                lineNumber: 16,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: name
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/RestaurantCard.js",
-                lineNumber: 17,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: cuisines && cuisines.join(", ")
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/RestaurantCard.js",
-                lineNumber: 18,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: [
-                    avgRating,
-                    " stars"
-                ]
-            }, void 0, true, {
-                fileName: "07_Finding_the_path/Coding/src/components/RestaurantCard.js",
-                lineNumber: 19,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: costForTwo
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/RestaurantCard.js",
-                lineNumber: 20,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "07_Finding_the_path/Coding/src/components/RestaurantCard.js",
-        lineNumber: 15,
-        columnNumber: 9
-    }, undefined);
-};
-_c = RestaurantCard;
-exports.default = RestaurantCard;
-var _c;
-$RefreshReg$(_c, "RestaurantCard");
-
-  $parcel$ReactRefreshHelpers$ea4d.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","../utils/constant":"ijeBb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ijeBb":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660";
-exports.default = CDN_URL; // There are 2 types export 
- // 1) -> Default export =>  (syntax)export default CDN_URL;
- // 2) -> Named export => (syntax) export CDN_URL = "link";
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fOwuG":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$b32d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$b32d.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Shimmer = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "shimmer-container",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
-                lineNumber: 4,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
-                lineNumber: 5,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
-                lineNumber: 6,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
-                lineNumber: 7,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
-                lineNumber: 8,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
-                lineNumber: 9,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
-                lineNumber: 10,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
-                lineNumber: 11,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
-                lineNumber: 12,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
-                lineNumber: 13,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
-                lineNumber: 14,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
-                lineNumber: 15,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
-                lineNumber: 16,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
-                lineNumber: 17,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
-                lineNumber: 18,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
-                lineNumber: 19,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "07_Finding_the_path/Coding/src/components/Shimmer.js",
-        lineNumber: 3,
-        columnNumber: 5
-    }, undefined);
-};
-_c = Shimmer;
-exports.default = Shimmer;
-var _c;
-$RefreshReg$(_c, "Shimmer");
-
-  $parcel$ReactRefreshHelpers$b32d.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6Byk8":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$b8eb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$b8eb.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const About = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "About"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/About.js",
-                lineNumber: 4,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: "This is a namaste web series"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/About.js",
-                lineNumber: 5,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "07_Finding_the_path/Coding/src/components/About.js",
-        lineNumber: 3,
-        columnNumber: 9
-    }, undefined);
-};
-_c = About;
-exports.default = About;
-var _c;
-$RefreshReg$(_c, "About");
-
-  $parcel$ReactRefreshHelpers$b8eb.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2CXUT":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$3c17 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$3c17.prelude(module);
+$parcel$ReactRefreshHelpers$4052.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -34563,90 +34625,70 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-const Contact = ()=>{
+const RestaurantMenu = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "Contact"
-    }, void 0, false, {
-        fileName: "07_Finding_the_path/Coding/src/components/Contact.js",
+        className: "menu",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "Name of the Restaurant"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/RestaurantMenu.js",
+                lineNumber: 6,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: "Menu"
+            }, void 0, false, {
+                fileName: "07_Finding_the_path/Coding/src/components/RestaurantMenu.js",
+                lineNumber: 7,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                        children: "Biryani"
+                    }, void 0, false, {
+                        fileName: "07_Finding_the_path/Coding/src/components/RestaurantMenu.js",
+                        lineNumber: 9,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                        children: "Burgers"
+                    }, void 0, false, {
+                        fileName: "07_Finding_the_path/Coding/src/components/RestaurantMenu.js",
+                        lineNumber: 10,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                        children: "Diet coke"
+                    }, void 0, false, {
+                        fileName: "07_Finding_the_path/Coding/src/components/RestaurantMenu.js",
+                        lineNumber: 11,
+                        columnNumber: 13
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "07_Finding_the_path/Coding/src/components/RestaurantMenu.js",
+                lineNumber: 8,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "07_Finding_the_path/Coding/src/components/RestaurantMenu.js",
         lineNumber: 5,
         columnNumber: 5
     }, undefined);
 };
-_c = Contact;
-exports.default = Contact;
+_c = RestaurantMenu;
+exports.default = RestaurantMenu;
 var _c;
-$RefreshReg$(_c, "Contact");
+$RefreshReg$(_c, "RestaurantMenu");
 
-  $parcel$ReactRefreshHelpers$3c17.postlude(module);
+  $parcel$ReactRefreshHelpers$4052.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dM2WH":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$c5f6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$c5f6.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _reactRouterDom = require("react-router-dom");
-var _s = $RefreshSig$();
-const Error = ()=>{
-    _s();
-    const err = (0, _reactRouterDom.useRouteError)();
-    console.log(err);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "OOPSS!!!"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/Error.js",
-                lineNumber: 8,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: "Something went wrong"
-            }, void 0, false, {
-                fileName: "07_Finding_the_path/Coding/src/components/Error.js",
-                lineNumber: 11,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: [
-                    err.status,
-                    " : ",
-                    err.statusText
-                ]
-            }, void 0, true, {
-                fileName: "07_Finding_the_path/Coding/src/components/Error.js",
-                lineNumber: 12,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "07_Finding_the_path/Coding/src/components/Error.js",
-        lineNumber: 7,
-        columnNumber: 9
-    }, undefined);
-};
-_s(Error, "U5GmGaAmh0j0MVy+E8WdBnjlm7s=", false, function() {
-    return [
-        (0, _reactRouterDom.useRouteError)
-    ];
-});
-_c = Error;
-exports.default = Error;
-var _c;
-$RefreshReg$(_c, "Error");
-
-  $parcel$ReactRefreshHelpers$c5f6.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}]},["kM1ix","1xC6H","EiW2E"], "EiW2E", "parcelRequirefdde")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["kM1ix","1xC6H","EiW2E"], "EiW2E", "parcelRequirefdde")
 
 //# sourceMappingURL=index.0ac9c822.js.map

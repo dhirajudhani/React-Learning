@@ -7,28 +7,9 @@ import RestaurantCard from "./components/RestaurantCard";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
+import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-/*
-Header
-    - Logo
-    - Nav Items
-Body
-    - Search
-    - ReataurantContainer
-    - ReataurantCard
-        - Image
-        - Name of res, Star rating, cuisine, deleviry time
-Footer
-    - Copyright
-    - Links
-    - Contact info
-    - Address
-*/
-
-
-
-
-
+import RestaurantMenu from "./components/RestaurantMenu";
 
 
 const AppLayout = () => {
@@ -56,6 +37,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/contact",
                 element: <Contact/> 
+            },
+            {
+                path: "/restaurants/:resId",
+                element: <RestaurantMenu/>
             }
         ],
         errorElement: <Error /> 
