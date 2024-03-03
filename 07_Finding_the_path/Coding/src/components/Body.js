@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 // import restaurantList from "../utils/mockData";
 
 /* React Hooks --> (Normal Js Function)
@@ -98,7 +99,7 @@ const Body = () => {
       </div>
       <div className="res-container">
         {searchedRestaurants?.map((restaurant) => {
-          return <RestaurantCard item={restaurant.info} />;
+          return <Link to={"/restaurants/" + restaurant.info.id}><RestaurantCard item={restaurant.info} /></Link>;
         })}
       </div>
     </div>

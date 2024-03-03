@@ -1,51 +1,62 @@
-import React from 'react'
-import { useState,useEffect } from 'react';
-import Shimmer from './Shimmer';
+import React from "react";
+import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
+import { useParams } from "react-router-dom"
+import { MENU_API } from "../utils/constant";
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState(null)
+  const [resInfo, setResInfo] = useState(null);
 
-  useEffect(()=>{
-    fetchMenu(); 
-  },[])
+  const {resId} = useParams();
+  // console.log(resId)
 
-  
+  useEffect(() => {
+    fetchMenu();
+  }, []);
 
   const fetchMenu = async () => {
-     const data = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=23.0343135&lng=72.52661049999999&restaurantId=149244&catalog_qa=undefined&submitAction=ENTER");
+    const data = await fetch(
+      MENU_API + resId);
 
-     const json =  await data.json();
+    const json = await data.json();
 
-     console.log(json);
+    console.log(json);
 
-     setResInfo(json.data);
+    setResInfo(json.data);
+  };
 
+  if (resInfo == null) {
+    return <Shimmer />;
   }
 
-  if(resInfo == null){
-    return <Shimmer/>
-  }
+  const { name, cuisines, costForTwoMessage } =
+    resInfo?.cards[0]?.card?.card?.info || {};
 
-  const {name, cuisines, costForTwoMessage} = resInfo?.cards[0]?.card?.card?.info || {};
+  const { itemCards } =
+    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
+      ?.card || {};
 
-  const {itemCards} = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card || {}
+  console.log(itemCards);
 
-  console.log(itemCards)
-  
   return (
-    <div className='menu'>
-        <h1>{name}</h1>
-        <p>{cuisines.join(", ")} - {costForTwoMessage}</p>
-        
-        <h2>Menu</h2>
-        <ul>
-          {itemCards.map((item) => {
-            return <li key={item.}>{item.card.info.name}</li>
-          })}
-            
-        </ul>
+    <div className="menu">
+      <h1>{name}</h1>
+      <p>
+        {cuisines.join(", ")} - {costForTwoMessage}
+      </p>
+
+      <h2>Menu</h2>
+      <ul>
+        {itemCards?.map((item) => {
+          return (
+            <li key={item.card.info.id}>
+              {item.card.info.name} - {"Rs "} {item.card.info.price / 100}
+            </li>
+          );
+        })}
+      </ul>
     </div>
-  )
-}
+  );
+};
 
 export default RestaurantMenu;
