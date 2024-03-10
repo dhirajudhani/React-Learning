@@ -34526,56 +34526,75 @@ var _user = require("./User");
 var _userDefault = parcelHelpers.interopDefault(_user);
 var _userClass = require("./UserClass");
 var _userClassDefault = parcelHelpers.interopDefault(_userClass);
-const About = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "About"
-            }, void 0, false, {
-                fileName: "08_Lets_get_classy/Coding/src/components/About.js",
-                lineNumber: 7,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: "This is a namaste web series"
-            }, void 0, false, {
-                fileName: "08_Lets_get_classy/Coding/src/components/About.js",
-                lineNumber: 8,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userDefault.default), {
-                name: "Dhiraj Udhani (functional)"
-            }, void 0, false, {
-                fileName: "08_Lets_get_classy/Coding/src/components/About.js",
-                lineNumber: 9,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userClassDefault.default), {
-                name: "Dhiraj Udhani (class)",
-                location: "Ahmedabad class"
-            }, void 0, false, {
-                fileName: "08_Lets_get_classy/Coding/src/components/About.js",
-                lineNumber: 10,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "08_Lets_get_classy/Coding/src/components/About.js",
-        lineNumber: 6,
-        columnNumber: 9
-    }, undefined);
-};
-_c = About;
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class About extends (0, _reactDefault.default).Component {
+    constructor(props){
+        super(props);
+    //console.log("Parent constructor");
+    }
+    componentDidMount() {
+    // console.log("parent coponent did mount ")
+    }
+    render() {
+        //console.log("Parent render");
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                    children: "About"
+                }, void 0, false, {
+                    fileName: "08_Lets_get_classy/Coding/src/components/About.js",
+                    lineNumber: 19,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                    children: "This is a namaste web series"
+                }, void 0, false, {
+                    fileName: "08_Lets_get_classy/Coding/src/components/About.js",
+                    lineNumber: 20,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userDefault.default), {
+                    name: "Dhiraj Udhani (functional)"
+                }, void 0, false, {
+                    fileName: "08_Lets_get_classy/Coding/src/components/About.js",
+                    lineNumber: 21,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userClassDefault.default), {
+                    name: "Dhiraj Udhani (class)",
+                    location: "Ahmedabad class"
+                }, void 0, false, {
+                    fileName: "08_Lets_get_classy/Coding/src/components/About.js",
+                    lineNumber: 22,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "08_Lets_get_classy/Coding/src/components/About.js",
+            lineNumber: 18,
+            columnNumber: 7
+        }, this);
+    }
+}
+// const About = () => {
+//     return (
+//         <div>
+//             <h1>About</h1>
+//             <h2>This is a namaste web series</h2>
+//             <User name={"Dhiraj Udhani (functional)"} />
+//             <UserClass name={"Dhiraj Udhani (class)"} location={"Ahmedabad class"}/>
+//         </div>
+//     )
+// }
 exports.default = About;
-var _c;
-$RefreshReg$(_c, "About");
 
   $parcel$ReactRefreshHelpers$8f46.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./User":"joOo8","./UserClass":"2A4sM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"joOo8":[function(require,module,exports) {
+},{"./User":"joOo8","./UserClass":"2A4sM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","react":"21dqq","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react/jsx-dev-runtime":"iTorj"}],"joOo8":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$21cf = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34673,44 +34692,39 @@ class UserClass extends (0, _reactDefault.default).Component {
     constructor(props){
         super(props);
         this.state = {
-            count: 2
+            userInfo: {
+                name: "dummy",
+                location: "Default",
+                avatar_url: "http"
+            }
         };
+    //console.log(this.props.name + "Child constructor")
+    }
+    async componentDidMount() {
+        // API CALLS
+        //console.log(this.props.name + "child component did mount")
+        const data = await fetch("https://api.github.com/users/dhirajudhani");
+        const json = await data.json();
+        this.setState({
+            userInfo: json
+        });
+        console.log(json);
     }
     render() {
-        const { location } = this.props;
+        // console.log(this.props.name +  "Child render")
+        const { name, location, avatar_url } = this.state.userInfo;
+        //    debugger;
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "user-card",
             children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                    children: [
-                        "Count = ",
-                        this.state.count
-                    ]
-                }, void 0, true, {
-                    fileName: "08_Lets_get_classy/Coding/src/components/UserClass.js",
-                    lineNumber: 15,
-                    columnNumber: 17
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    onClick: ()=>{
-                        this.setState({
-                            count: this.state.count + 1
-                        });
-                    },
-                    children: "Count Increase"
-                }, void 0, false, {
-                    fileName: "08_Lets_get_classy/Coding/src/components/UserClass.js",
-                    lineNumber: 16,
-                    columnNumber: 17
-                }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                     children: [
                         "Name: ",
-                        this.props.name
+                        name
                     ]
                 }, void 0, true, {
                     fileName: "08_Lets_get_classy/Coding/src/components/UserClass.js",
-                    lineNumber: 21,
+                    lineNumber: 38,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -34720,20 +34734,28 @@ class UserClass extends (0, _reactDefault.default).Component {
                     ]
                 }, void 0, true, {
                     fileName: "08_Lets_get_classy/Coding/src/components/UserClass.js",
-                    lineNumber: 22,
+                    lineNumber: 39,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                     children: "Contact: @udhani_dhiraj"
                 }, void 0, false, {
                     fileName: "08_Lets_get_classy/Coding/src/components/UserClass.js",
-                    lineNumber: 23,
+                    lineNumber: 40,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    src: avatar_url,
+                    alt: ""
+                }, void 0, false, {
+                    fileName: "08_Lets_get_classy/Coding/src/components/UserClass.js",
+                    lineNumber: 41,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "08_Lets_get_classy/Coding/src/components/UserClass.js",
-            lineNumber: 14,
+            lineNumber: 36,
             columnNumber: 13
         }, this);
     }
