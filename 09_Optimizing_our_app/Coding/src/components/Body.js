@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
 // import restaurantList from "../utils/mockData";
 
 /* React Hooks --> (Normal Js Function)
@@ -52,17 +51,6 @@ const Body = () => {
       console.log(error);
     }
   };
-
-  const onlineStatus = useOnlineStatus();
-
-  if(onlineStatus === false){
-    return <h1>Looks like you're offline, please check your internet connection</h1>
-  }
-
-
-
-
-
   // Conditional Rendering
   // if(listOfRestaurant.length === 0){
   //   return <Shimmer/>
