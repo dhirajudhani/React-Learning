@@ -27332,10 +27332,10 @@ const Header = ()=>{
     let [btnNameReact, setBtnNameReact] = (0, _react.useState)("Login");
     let onlineStatus = (0, _useOnlineStatusDefault.default)();
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "header",
+        className: "flex",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "logo-container",
+                className: "w-20",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                     className: "logo",
                     src: (0, _logoJpgDefault.default),
