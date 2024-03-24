@@ -27332,7 +27332,7 @@ const Header = ()=>{
     let [btnNameReact, setBtnNameReact] = (0, _react.useState)("Login");
     let onlineStatus = (0, _useOnlineStatusDefault.default)();
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex",
+        className: "flex justify-between shadow-lg",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "w-20",
@@ -27351,10 +27351,12 @@ const Header = ()=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "nav-items",
+                className: "flex items-center",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    className: "flex p-4 m-4",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            className: "px-4",
                             children: [
                                 "Online Status : ",
                                 onlineStatus ? "\u2705" : "\uD83D\uDD34"
@@ -27365,6 +27367,7 @@ const Header = ()=>{
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            className: "px-4",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                 to: "/grocery",
                                 children: "Grocery"
@@ -27379,6 +27382,7 @@ const Header = ()=>{
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            className: "px-4",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                 to: "/",
                                 children: "Home"
@@ -27393,6 +27397,7 @@ const Header = ()=>{
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            className: "px-4",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                 to: "/about",
                                 children: "About Us"
@@ -27407,6 +27412,7 @@ const Header = ()=>{
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            className: "px-4",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                 to: "/contact",
                                 children: "Contact Us"
@@ -27421,6 +27427,7 @@ const Header = ()=>{
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            className: "px-4",
                             children: "Help"
                         }, void 0, false, {
                             fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Header.js",
@@ -27428,6 +27435,7 @@ const Header = ()=>{
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            className: "px-4",
                             children: "Cart"
                         }, void 0, false, {
                             fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Header.js",
@@ -34285,14 +34293,14 @@ const Body = ()=>{
         className: "body",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "filter",
+                className: "filter flex",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "search",
+                        className: "search m-4 p-4",
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                                 type: "text",
-                                className: "search-box",
+                                className: "border border-solid border-black",
                                 placeholder: "Search for restaurants and food",
                                 value: searchText,
                                 onChange: (e)=>{
@@ -34304,6 +34312,7 @@ const Body = ()=>{
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: "px-4 py-1 bg-green-700 m-4 rounded-lg",
                                 onClick: ()=>{
                                     console.log(searchText);
                                     const fillteredRestaurants = listOfRestaurant.filter((res)=>{
@@ -34323,20 +34332,27 @@ const Body = ()=>{
                         lineNumber: 77,
                         columnNumber: 9
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "filter-btn",
-                        onClick: ()=>{
-                            // Filter out logic
-                            const fillteredRes = listOfRestaurant.filter((res)=>{
-                                return res.info.avgRating > 4;
-                            });
-                            console.log(fillteredRes);
-                            setListOfRestaurant(fillteredRes);
-                        },
-                        children: "Top Rated"
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "search m-4 p-4 flex items-center",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            className: "px-4 py-1 bg-green-700 m-4 rounded-lg",
+                            onClick: ()=>{
+                                // Filter out logic
+                                const fillteredRes = listOfRestaurant.filter((res)=>{
+                                    return res.info.avgRating > 4;
+                                });
+                                console.log(fillteredRes);
+                                setListOfRestaurant(fillteredRes);
+                            },
+                            children: "Top Rated"
+                        }, void 0, false, {
+                            fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Body.js",
+                            lineNumber: 103,
+                            columnNumber: 11
+                        }, undefined)
                     }, void 0, false, {
                         fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Body.js",
-                        lineNumber: 101,
+                        lineNumber: 102,
                         columnNumber: 9
                     }, undefined)
                 ]
@@ -34346,7 +34362,7 @@ const Body = ()=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "res-container",
+                className: "flex flex-wrap",
                 children: searchedRestaurants?.map((restaurant)=>{
                     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                         to: "/restaurants/" + restaurant.info.id,
@@ -34354,18 +34370,18 @@ const Body = ()=>{
                             item: restaurant.info
                         }, void 0, false, {
                             fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Body.js",
-                            lineNumber: 119,
+                            lineNumber: 123,
                             columnNumber: 15
                         }, undefined)
                     }, void 0, false, {
                         fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Body.js",
-                        lineNumber: 118,
+                        lineNumber: 122,
                         columnNumber: 13
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Body.js",
-                lineNumber: 115,
+                lineNumber: 119,
                 columnNumber: 7
             }, undefined)
         ]
@@ -34423,19 +34439,19 @@ const RestaurantCard = (props)=>{
         backgroundColor: "#f0f0f0"
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "res-card",
-        style: styleCard,
+        className: "m-4 p-4 w-[300px] bg-gray-100 hover:bg-gray-200 rounded-lg",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                 src: imgsrc,
                 alt: "res-logo",
-                className: "res-logo"
+                className: "rounded-lg"
             }, void 0, false, {
                 fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/RestaurantCard.js",
                 lineNumber: 16,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                className: "font-bold py-2 text-lg",
                 children: name
             }, void 0, false, {
                 fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/RestaurantCard.js",

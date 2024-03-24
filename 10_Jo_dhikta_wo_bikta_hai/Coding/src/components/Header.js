@@ -9,29 +9,29 @@ const Header = () => {
   let [btnNameReact, setBtnNameReact] = useState("Login");
   let onlineStatus = useOnlineStatus();
   return (
-    <div className="flex">
+    <div className="flex justify-between shadow-lg">
       <div className="w-20">
         <img className="logo" src={logo} alt="Logo" />
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>
+      <div className="flex items-center">
+        <ul className="flex p-4 m-4">
+          <li className="px-4">
             Online Status : {onlineStatus ? "✅" : "🔴"}
           </li>
-          <li>
+          <li className="px-4">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li>
+          <li className="px-4">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="px-4">
             <Link to="/about">About Us</Link>
           </li>
-          <li>
+          <li className="px-4">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>Help</li>
-          <li>Cart</li>
+          <li className="px-4">Help</li>
+          <li className="px-4">Cart</li>
           <button
             className="login"
             onClick={() => {

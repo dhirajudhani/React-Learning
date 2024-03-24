@@ -12,9 +12,9 @@ const RestaurantCard = (props) => {
         backgroundColor:"#f0f0f0"
     }
     return (
-        <div className="res-card" style={styleCard}>
-            <img src={imgsrc} alt="res-logo" className="res-logo" />
-            <h3>{name}</h3>
+        <div className="m-4 p-4 w-[300px] bg-gray-100 hover:bg-gray-200 rounded-lg" >
+            <img src={imgsrc} alt="res-logo" className="rounded-lg" />
+            <h3 className="font-bold py-2 text-lg">{name}</h3>
             <h4>{cuisines && cuisines.join(", ")}</h4>
             <h4>{avgRating} stars</h4>
             <h4>{costForTwo}</h4>
