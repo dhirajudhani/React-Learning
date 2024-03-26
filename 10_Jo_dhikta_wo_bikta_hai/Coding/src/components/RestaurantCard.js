@@ -4,7 +4,7 @@ import {CDN_URL} from "../utils/constant";
 const RestaurantCard = (props) => {
     // const {resName, cuisine} = props;
     // console.log(props)
-    const {item} = props
+    const {item} = props;
     const { name, avgRating, cuisines,costForTwo,   cloudinaryImageId } = item || {};
     const imgsrc = `${CDN_URL}/${cloudinaryImageId}`;
 
@@ -21,5 +21,16 @@ const RestaurantCard = (props) => {
         </div>
     )
 }
+
+export const withPromotedLabel = (RestaurantCard) => {
+    return (props) => {
+        <div>
+            
+            <label >Promoted</label>
+            <RestaurantCard {...props}/>
+        </div>
+    }
+}
+
 
 export default RestaurantCard;

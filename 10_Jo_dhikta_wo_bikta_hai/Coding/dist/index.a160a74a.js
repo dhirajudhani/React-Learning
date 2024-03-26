@@ -34256,8 +34256,9 @@ const Body = ()=>{
     const [listOfRestaurant, setListOfRestaurant] = (0, _react.useState)([]);
     const [searchedRestaurants, setSearchRestaurants] = (0, _react.useState)([]);
     const [searchText, setSearchText] = (0, _react.useState)("");
+    const RestaurantCardPromoted = (0, _restaurantCard.withPromotedLabel)((0, _restaurantCardDefault.default));
     //whenever state variable updates, react triggers a reconciliation cycle(re-rendering the component)
-    console.log("Body Rendered");
+    console.log("Body Rendered", listOfRestaurant);
     // Normal variable
     // let listOfRestaurant;
     (0, _react.useEffect)(()=>{
@@ -34278,7 +34279,7 @@ const Body = ()=>{
         children: "Looks like you're offline, please check your internet connection"
     }, void 0, false, {
         fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Body.js",
-        lineNumber: 63,
+        lineNumber: 64,
         columnNumber: 7
     }, undefined);
     // Conditional Rendering
@@ -34287,7 +34288,7 @@ const Body = ()=>{
     // }
     return listOfRestaurant.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Body.js",
-        lineNumber: 73,
+        lineNumber: 74,
         columnNumber: 5
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body",
@@ -34308,7 +34309,7 @@ const Body = ()=>{
                                 }
                             }, void 0, false, {
                                 fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Body.js",
-                                lineNumber: 78,
+                                lineNumber: 79,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -34323,13 +34324,13 @@ const Body = ()=>{
                                 children: "Search"
                             }, void 0, false, {
                                 fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Body.js",
-                                lineNumber: 87,
+                                lineNumber: 88,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Body.js",
-                        lineNumber: 77,
+                        lineNumber: 78,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34347,18 +34348,18 @@ const Body = ()=>{
                             children: "Top Rated"
                         }, void 0, false, {
                             fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Body.js",
-                            lineNumber: 103,
+                            lineNumber: 104,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Body.js",
-                        lineNumber: 102,
+                        lineNumber: 103,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Body.js",
-                lineNumber: 76,
+                lineNumber: 77,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34366,12 +34367,18 @@ const Body = ()=>{
                 children: searchedRestaurants?.map((restaurant)=>{
                     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                         to: "/restaurants/" + restaurant.info.id,
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
+                        children: restaurant.info.promoted ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCardPromoted, {
                             item: restaurant.info
                         }, void 0, false, {
                             fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Body.js",
-                            lineNumber: 123,
-                            columnNumber: 15
+                            lineNumber: 124,
+                            columnNumber: 17
+                        }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
+                            item: restaurant.info
+                        }, void 0, false, {
+                            fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Body.js",
+                            lineNumber: 126,
+                            columnNumber: 17
                         }, undefined)
                     }, void 0, false, {
                         fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Body.js",
@@ -34387,7 +34394,7 @@ const Body = ()=>{
         ]
     }, void 0, true, {
         fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Body.js",
-        lineNumber: 75,
+        lineNumber: 76,
         columnNumber: 5
     }, undefined);
 };
@@ -34427,6 +34434,7 @@ $parcel$ReactRefreshHelpers$4b93.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "withPromotedLabel", ()=>withPromotedLabel);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _constant = require("../utils/constant");
 const RestaurantCard = (props)=>{
@@ -34490,6 +34498,32 @@ const RestaurantCard = (props)=>{
     }, undefined);
 };
 _c = RestaurantCard;
+const withPromotedLabel = (RestaurantCard)=>{
+    return (props)=>{
+        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                    children: "Promoted"
+                }, void 0, false, {
+                    fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/RestaurantCard.js",
+                    lineNumber: 29,
+                    columnNumber: 13
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard, {
+                    ...props
+                }, void 0, false, {
+                    fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/RestaurantCard.js",
+                    lineNumber: 30,
+                    columnNumber: 13
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/RestaurantCard.js",
+            lineNumber: 27,
+            columnNumber: 9
+        }, undefined);
+    };
+};
 exports.default = RestaurantCard;
 var _c;
 $RefreshReg$(_c, "RestaurantCard");

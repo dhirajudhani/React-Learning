@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -25,8 +25,10 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
 
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
   //whenever state variable updates, react triggers a reconciliation cycle(re-rendering the component)
-  console.log("Body Rendered");
+  console.log("Body Rendered", listOfRestaurant);
 
   // Normal variable
   // let listOfRestaurant;
@@ -58,7 +60,6 @@ const Body = () => {
   const onlineStatus = useOnlineStatus();
 
   if (onlineStatus === false) {
-    
     return (
       <h1>Looks like you're offline, please check your internet connection</h1>
     );
@@ -114,13 +115,16 @@ const Body = () => {
             Top Rated
           </button>
         </div>
-        
       </div>
       <div className="flex flex-wrap">
         {searchedRestaurants?.map((restaurant) => {
           return (
             <Link to={"/restaurants/" + restaurant.info.id}>
-              <RestaurantCard item={restaurant.info} />
+              {restaurant.info.promoted ? (
+                <RestaurantCardPromoted item={restaurant.info} />
+              ) : (
+                <RestaurantCard item={restaurant.info} />
+              )}
             </Link>
           );
         })}
