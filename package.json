@@ -13,6 +13,7 @@
   "author": "dhiraj udhani",
   "license": "ISC",
   "devDependencies": {
+    "buffer": "^6.0.3",
     "parcel": "^2.11.0",
     "postcss": "^8.4.38",
     "process": "^0.11.10",
