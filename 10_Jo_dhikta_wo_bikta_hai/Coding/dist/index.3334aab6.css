@@ -248,10 +248,6 @@ img, video {
   position: absolute;
 }
 
-.m-2 {
-  margin: .5rem;
-}
-
 .m-4 {
   margin: 1rem;
 }
@@ -260,13 +256,19 @@ img, video {
   margin: auto;
 }
 
-.m-10 {
-  margin: 2.5rem;
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
 }
 
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.my-24 {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
 }
 
 .my-5 {
@@ -279,50 +281,8 @@ img, video {
   margin-bottom: 1.5rem;
 }
 
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.my-12 {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
-.my-16 {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-}
-
-.my-20 {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-}
-
-.my-24 {
-  margin-top: 6rem;
-  margin-bottom: 6rem;
-}
-
-.mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
-}
-
 .flex {
   display: flex;
-}
-
-.h-20 {
-  height: 5rem;
-}
-
-.h-40 {
-  height: 10rem;
-}
-
-.h-36 {
-  height: 9rem;
 }
 
 .h-32 {
@@ -333,36 +293,24 @@ img, video {
   width: 5rem;
 }
 
-.w-6\/12 {
-  width: 50%;
-}
-
-.w-\[300px\] {
-  width: 300px;
+.w-3\/12 {
+  width: 25%;
 }
 
 .w-40 {
   width: 10rem;
 }
 
+.w-6\/12 {
+  width: 50%;
+}
+
 .w-9\/12 {
   width: 75%;
 }
 
-.w-3\/12 {
-  width: 25%;
-}
-
-.w-2 {
-  width: .5rem;
-}
-
-.w-auto {
-  width: auto;
-}
-
-.w-14 {
-  width: 3.5rem;
+.w-\[300px\] {
+  width: 300px;
 }
 
 .cursor-pointer {
@@ -375,10 +323,6 @@ img, video {
 
 .items-center {
   align-items: center;
-}
-
-.justify-center {
-  justify-content: center;
 }
 
 .justify-between {
@@ -401,18 +345,6 @@ img, video {
   border-bottom-width: 2px;
 }
 
-.border-b {
-  border-bottom-width: 1px;
-}
-
-.border-b-4 {
-  border-bottom-width: 4px;
-}
-
-.border-b-8 {
-  border-bottom-width: 8px;
-}
-
 .border-solid {
   border-style: solid;
 }
@@ -420,10 +352,6 @@ img, video {
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
-}
-
-.border-b-inherit {
-  border-bottom-color: inherit;
 }
 
 .bg-gray-100 {
@@ -456,10 +384,6 @@ img, video {
 
 .p-4 {
   padding: 1rem;
-}
-
-.p-5 {
-  padding: 1.25rem;
 }
 
 .p-6 {
