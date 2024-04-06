@@ -2969,8 +2969,11 @@ var _errorDefault = parcelHelpers.interopDefault(_error);
 var _restaurantMenu = require("./components/RestaurantMenu");
 var _restaurantMenuDefault = parcelHelpers.interopDefault(_restaurantMenu);
 var _reactRouterDom = require("react-router-dom");
+var _userContext = require("./utils/UserContext");
+var _userContextDefault = parcelHelpers.interopDefault(_userContext);
+var _s = $RefreshSig$();
 // import Grocery from "./components/Grocery";
-// chunking 
+// chunking
 // code splitting
 // dynamic bundling
 // lazy loading
@@ -2978,50 +2981,78 @@ var _reactRouterDom = require("react-router-dom");
 const Grocery = /*#__PURE__*/ (0, _react.lazy)(()=>require("37ace7255a60d2c0"));
 _c = Grocery;
 const AppLayout = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "app",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
-                fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/App.js",
-                lineNumber: 27,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
-                fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/App.js",
-                lineNumber: 28,
-                columnNumber: 9
-            }, undefined)
-        ]
-    }, void 0, true, {
+    _s();
+    const [userInfo, setUserInfo] = (0, _react.useState)();
+    (0, _react.useEffect)(()=>{
+        const data = {
+            name: "Dhiraj"
+        };
+        setUserInfo(data.name);
+    }, []);
+    // console.log(userInfo)
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userContextDefault.default).Provider, {
+        value: {
+            loggedInUser: userInfo
+        },
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "app",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userContextDefault.default).Provider, {
+                    value: {
+                        loggedInUser: "Mayra"
+                    },
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
+                        fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/App.js",
+                        lineNumber: 38,
+                        columnNumber: 13
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/App.js",
+                    lineNumber: 37,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
+                    fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/App.js",
+                    lineNumber: 40,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/App.js",
+            lineNumber: 36,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
         fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/App.js",
-        lineNumber: 26,
-        columnNumber: 6
+        lineNumber: 35,
+        columnNumber: 5
     }, undefined);
 };
+_s(AppLayout, "QaFF8threzXByS0Wmi/aLwo+tuQ=");
 _c1 = AppLayout;
 const appRouter = (0, _reactRouterDom.createBrowserRouter)([
     {
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
             fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/App.js",
-            lineNumber: 36,
-            columnNumber: 18
+            lineNumber: 49,
+            columnNumber: 14
         }, undefined),
         children: [
             {
                 path: "/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/App.js",
-                    lineNumber: 40,
-                    columnNumber: 26
+                    lineNumber: 53,
+                    columnNumber: 18
                 }, undefined)
             },
             {
                 path: "/about",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
                     fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/App.js",
-                    lineNumber: 44,
-                    columnNumber: 26
+                    lineNumber: 57,
+                    columnNumber: 18
                 }, undefined)
             },
             {
@@ -3030,36 +3061,36 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                     fallback: "Loading.....   ",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Grocery, {}, void 0, false, {
                         fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/App.js",
-                        lineNumber: 48,
-                        columnNumber: 63
+                        lineNumber: 63,
+                        columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/App.js",
-                    lineNumber: 48,
-                    columnNumber: 26
+                    lineNumber: 62,
+                    columnNumber: 11
                 }, undefined)
             },
             {
                 path: "/contact",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
                     fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/App.js",
-                    lineNumber: 52,
-                    columnNumber: 26
+                    lineNumber: 69,
+                    columnNumber: 18
                 }, undefined)
             },
             {
                 path: "/restaurants/:resId",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantMenuDefault.default), {}, void 0, false, {
                     fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/App.js",
-                    lineNumber: 56,
-                    columnNumber: 26
+                    lineNumber: 73,
+                    columnNumber: 18
                 }, undefined)
             }
         ],
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/App.js",
-            lineNumber: 59,
-            columnNumber: 23
+            lineNumber: 76,
+            columnNumber: 19
         }, undefined)
     }
 ]);
@@ -3068,13 +3099,12 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     router: appRouter
 }, void 0, false, {
     fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/App.js",
-    lineNumber: 64,
+    lineNumber: 80,
     columnNumber: 13
-}, undefined)) // Passing a props to a component is like passing an argument to function
+}, undefined)); // Passing a props to a component is like passing an argument to function
  // props destructuring => const {resName, cuisine} = props;
  // so we can write either {resName, cuisine} or props as an argument
  // Config Driven UI vvvvvvvvIMP
-;
 var _c, _c1;
 $RefreshReg$(_c, "Grocery");
 $RefreshReg$(_c1, "AppLayout");
@@ -3084,7 +3114,7 @@ $RefreshReg$(_c1, "AppLayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","../src/Images/logo.jpg":"eIDep","./components/Header":"ctT9n","./components/Body":"8gWDN","./components/RestaurantCard":"crGFB","./components/About":"aqY85","./components/Contact":"jnRWg","./components/Error":"2p7te","./components/RestaurantMenu":"5O26c","react-router-dom":"9xmpe","37ace7255a60d2c0":"cS16b","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","../src/Images/logo.jpg":"eIDep","./components/Header":"ctT9n","./components/Body":"8gWDN","./components/RestaurantCard":"crGFB","./components/About":"aqY85","./components/Contact":"jnRWg","./components/Error":"2p7te","./components/RestaurantMenu":"5O26c","react-router-dom":"9xmpe","37ace7255a60d2c0":"cS16b","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./utils/UserContext":"aQrJO"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27500,7 +27530,7 @@ $RefreshReg$(_c, "Header");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../Images/logo.jpg":"eIDep","react":"21dqq","react-router-dom":"9xmpe","../utils/useOnlineStatus":"eM2BL","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/UserContext":"aQrJO"}],"9xmpe":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../Images/logo.jpg":"eIDep","react":"21dqq","react-router-dom":"9xmpe","../utils/useOnlineStatus":"eM2BL","../utils/UserContext":"aQrJO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9xmpe":[function(require,module,exports) {
 /**
  * React Router DOM v6.22.3
  *
@@ -34484,7 +34514,7 @@ const RestaurantCard = (props)=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                 src: imgsrc,
                 alt: "res-logo",
-                className: "rounded-lg"
+                className: "rounded-xl h-56 w-72 bg-cover"
             }, void 0, false, {
                 fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/RestaurantCard.js",
                 lineNumber: 16,
@@ -34729,6 +34759,8 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _userContext = require("../utils/UserContext");
+var _userContextDefault = parcelHelpers.interopDefault(_userContext);
 var _user = require("./User");
 var _userDefault = parcelHelpers.interopDefault(_user);
 var _userClass = require("./UserClass");
@@ -34751,21 +34783,44 @@ class About extends (0, _reactDefault.default).Component {
                     children: "About"
                 }, void 0, false, {
                     fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/About.js",
-                    lineNumber: 19,
+                    lineNumber: 20,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                     children: "This is a namaste web series"
                 }, void 0, false, {
                     fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/About.js",
-                    lineNumber: 20,
+                    lineNumber: 21,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    children: [
+                        "LoggedIn user",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userContextDefault.default).Consumer, {
+                            children: ({ loggedInUser })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                                    className: "text-xl font-bold",
+                                    children: loggedInUser
+                                }, void 0, false, {
+                                    fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/About.js",
+                                    lineNumber: 26,
+                                    columnNumber: 35
+                                }, this)
+                        }, void 0, false, {
+                            fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/About.js",
+                            lineNumber: 24,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/About.js",
+                    lineNumber: 22,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userDefault.default), {
                     name: "Dhiraj Udhani (functional)"
                 }, void 0, false, {
                     fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/About.js",
-                    lineNumber: 21,
+                    lineNumber: 30,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userClassDefault.default), {
@@ -34773,13 +34828,13 @@ class About extends (0, _reactDefault.default).Component {
                     location: "Ahmedabad class"
                 }, void 0, false, {
                     fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/About.js",
-                    lineNumber: 22,
+                    lineNumber: 31,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/About.js",
-            lineNumber: 18,
+            lineNumber: 19,
             columnNumber: 7
         }, this);
     }
@@ -34801,7 +34856,7 @@ exports.default = About;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./User":"1jTWQ","./UserClass":"db9ER","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"1jTWQ":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./User":"1jTWQ","./UserClass":"db9ER","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/UserContext":"aQrJO"}],"1jTWQ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1383 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

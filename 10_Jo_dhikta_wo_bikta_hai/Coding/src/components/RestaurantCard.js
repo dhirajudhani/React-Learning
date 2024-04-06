@@ -13,7 +13,7 @@ const RestaurantCard = (props) => {
     }
     return (
         <div className="m-4 p-4 w-[300px] bg-gray-100 hover:bg-gray-200 rounded-lg" >
-            <img src={imgsrc} alt="res-logo" className="rounded-lg" />
+            <img src={imgsrc} alt="res-logo" className="rounded-xl h-56 w-72 bg-cover" />
             <h3 className="font-bold py-2 text-lg">{name}</h3>
             <h4>{cuisines && cuisines.join(", ")}</h4>
             <h4>{avgRating} stars</h4>
