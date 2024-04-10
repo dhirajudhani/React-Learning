@@ -40674,10 +40674,15 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRedux = require("react-redux");
 var _itemList = require("./ItemList");
 var _itemListDefault = parcelHelpers.interopDefault(_itemList);
+var _cartSlice = require("../utils/cartSlice");
 var _s = $RefreshSig$();
 const Cart = ()=>{
     _s();
     const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
+    const dispatch = (0, _reactRedux.useDispatch)();
+    const handleClearCart = ()=>{
+        dispatch((0, _cartSlice.clearCart)());
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "text-center m-4 p-4",
         children: [
@@ -40686,33 +40691,52 @@ const Cart = ()=>{
                 children: "Cart"
             }, void 0, false, {
                 fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Cart.js",
-                lineNumber: 11,
+                lineNumber: 17,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "w-6/12 m-auto",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _itemListDefault.default), {
-                    items: cartItems
-                }, void 0, false, {
-                    fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Cart.js",
-                    lineNumber: 15,
-                    columnNumber: 13
-                }, undefined)
-            }, void 0, false, {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "p-2 bg-white shadow-xl m-auto font-bold text-lg text-green-600 rounded-lg w-20",
+                        onClick: handleClearCart,
+                        children: "Clear"
+                    }, void 0, false, {
+                        fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Cart.js",
+                        lineNumber: 21,
+                        columnNumber: 11
+                    }, undefined),
+                    cartItems.length === 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        children: "Cart is empty, Add Items into the cart!!"
+                    }, void 0, false, {
+                        fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Cart.js",
+                        lineNumber: 24,
+                        columnNumber: 38
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _itemListDefault.default), {
+                        items: cartItems
+                    }, void 0, false, {
+                        fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Cart.js",
+                        lineNumber: 25,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
                 fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Cart.js",
-                lineNumber: 14,
+                lineNumber: 20,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "10_Jo_dhikta_wo_bikta_hai/Coding/src/components/Cart.js",
-        lineNumber: 10,
+        lineNumber: 16,
         columnNumber: 5
     }, undefined);
 };
-_s(Cart, "sOGYiwJY+kD+ABxufRt7JbvggIE=", false, function() {
+_s(Cart, "ClsVU7OzYQ50hVvtHIih2dVFL+s=", false, function() {
     return [
-        (0, _reactRedux.useSelector)
+        (0, _reactRedux.useSelector),
+        (0, _reactRedux.useDispatch)
     ];
 });
 _c = Cart;
@@ -40725,6 +40749,6 @@ $RefreshReg$(_c, "Cart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"62sf7","./ItemList":"6bnJ8"}]},["kaWJL","1xC6H","ivZVg"], "ivZVg", "parcelRequirefdde")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-redux":"62sf7","./ItemList":"6bnJ8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/cartSlice":"idEPH"}]},["kaWJL","1xC6H","ivZVg"], "ivZVg", "parcelRequirefdde")
 
 //# sourceMappingURL=index.a160a74a.js.map

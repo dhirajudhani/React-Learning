@@ -256,12 +256,8 @@ img, video {
   margin: auto;
 }
 
-.m-1 {
-  margin: .25rem;
-}
-
-.m-10 {
-  margin: 2.5rem;
+.m-2 {
+  margin: .5rem;
 }
 
 .mx-10 {
@@ -404,10 +400,6 @@ img, video {
 
 .p-6 {
   padding: 1.5rem;
-}
-
-.p-10 {
-  padding: 2.5rem;
 }
 
 .px-4 {
